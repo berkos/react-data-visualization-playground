@@ -1,0 +1,13 @@
+{
+  "name": "Ben",
+  "age": 33,
+  "smart": true,
+  "friends": [
+    "AA",
+    "BB"
+  ],
+  "eyes": {
+    "left": "green",
+    "right": "brown"
+  }
+}
