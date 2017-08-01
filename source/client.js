@@ -4,5 +4,7 @@ import App from './components/app';
 
 import data from "./data.json";
 
+//name={data.name} age={data.age}
 
-ReactDOM.render(<App />, document.getElementById('react'))
+
+ReactDOM.render(<App {...data}/>, document.getElementById('react'));
