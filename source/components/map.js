@@ -2,8 +2,12 @@ import React from "react";
 
 export default class Map extends React.Component {
   onClick(e) {
-    let img = e.target;
-    let point = {x: e.offsetX, y: e.offsetY};
+    let img = e.target,
+      point = {x: e.offsetX, y: e.offsetY},
+      latSize = img.height / 180,
+      lonSize = img.width / 360,
+      lat, lon;
+
 
     if (!point.x) {
       point = {
@@ -12,7 +16,11 @@ export default class Map extends React.Component {
       };
     }
 
+    lat = (point.y - (img.height / 2)) / -latSize;
+    lon = (point.x - (img.width / 2)) / lonSize;
+
     console.log(point);
+    console.log(lat, lon);
   }
 
   render() {
