@@ -20,11 +20,22 @@ export default class Map extends React.Component {
     lat = (point.y - (img.height / 2)) / -latSize;
     lon = (point.x - (img.width / 2)) / lonSize;
 
-    console.log(point);
-    console.log(lat, lon);
+    let ws = `http://api.geonames.org/citiesJSON?north=${lat + r}&south=${lat - r}&east=${lon + r}&west=${lon - r}&lang=en&username=geek`;
 
-    let ws = `http://api.geonames.org/citiesJSON?north=${lat + r}&south=${lat - r}&east=${lon + r}&west=${lon - r}&lang=en&username=geek`
-    console.log(ws)
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', ws);
+
+    xhr.onload = () => {
+      //this
+      if (xhr.status === 200) {
+        console.log(xhr.responseText);
+      } else {
+        // ERROR
+        console.log('Error', xhr);
+      }
+    };
+
+    xhr.send();
   }
 
   render() {
