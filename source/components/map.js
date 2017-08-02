@@ -6,7 +6,8 @@ export default class Map extends React.Component {
       point = {x: e.offsetX, y: e.offsetY},
       latSize = img.height / 180,
       lonSize = img.width / 360,
-      lat, lon;
+      lat, lon,
+      r = 1;
 
 
     if (!point.x) {
@@ -21,6 +22,9 @@ export default class Map extends React.Component {
 
     console.log(point);
     console.log(lat, lon);
+
+    let ws = `http://api.geonames.org/citiesJSON?north=${lat + r}&south=${lat - r}&east=${lon + r}&west=${lon - r}&lang=en&username=geek`
+    console.log(ws)
   }
 
   render() {
