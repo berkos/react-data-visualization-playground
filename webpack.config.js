@@ -1,6 +1,5 @@
 const path = require('path');
 
-
 module.exports = {
   entry: ['babel-polyfill', './source/client.js'],
   output: {
@@ -23,6 +22,11 @@ module.exports = {
         test: /\.json$/,
         exclude: /node_modules/,
         loader: 'json-loader'
+      },
+      {
+        test: /\.csv$/,
+        exclude: /node_modules/,
+        loader: 'dsv-loader'
       }
     ],
   }

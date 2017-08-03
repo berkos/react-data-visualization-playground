@@ -22,11 +22,13 @@
     "babel-preset-react": "^6.24.1",
     "json-loader": "^0.5.7",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^2.6.1",
+    "chart.js": "^2.1.6"
   },
   "dependencies": {
     "griddle-react": "^1.5.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "dsv-loader": "^1.1.0"
   }
 }
