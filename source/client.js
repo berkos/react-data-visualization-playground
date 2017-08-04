@@ -7,4 +7,4 @@ import Map from './components/map';
 //name={data.name} age={data.age}
 // ReactDOM.render(<App {...data}/>, document.getElementById('react'));
 
-ReactDOM.render(<Map />, document.getElementById('react'))
+ReactDOM.render(<Map />, document.getElementById('react'));
