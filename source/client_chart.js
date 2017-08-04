@@ -6,7 +6,7 @@ const data = {
   type: "bar",
   data: {
     labels: ["Ben", "James", "Marry", "Sam", "Gloria"],
-    dataset: [
+    datasets: [
       {
         label: 'Fun',
         data: [80, 40, 21, 44, 92],
