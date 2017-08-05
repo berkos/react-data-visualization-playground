@@ -1,6 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './components/chart';
+import data2_csv from '../data/data.csv';
+
+// Shift the first item
+let obj = data2_csv.shift(),
+  formatedData = {labels: [obj.name], datasets: []},
+  map = new Map();
+
+delete obj.name;
+for (let item in obj) {
+  let dataset = {label: item, data: [obj.item]};
+  formatedData.datasets.push(dataset);
+  map[item] = dataset;
+}
+
+data2_csv.forEach( (obj, i, a) => {
+  formatedData.labels.push(obj.name);
+  delete obj.name;
+  for (let item in obj) {
+    map[item].data.push(obj[item]);
+  }
+});
+
+const data2 = {
+  type: "bar",
+  data: formatedData,
+  options: {}
+};
 
 const data = {
   type: "bar",
@@ -27,8 +54,6 @@ const data = {
       },
     ]
   },
-  options: {
-
-  }
+  options: {}
 };
-ReactDOM.render(<Chart {...data}/>, document.getElementById('react'));
+ReactDOM.render(<Chart {...data2}/>, document.getElementById('react'));
