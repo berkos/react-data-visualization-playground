@@ -1,3 +1,4 @@
+import RandomColor from 'just.randomcolor';
 
 export function a2c (a) {
 // Shift the first item
@@ -7,7 +8,15 @@ export function a2c (a) {
 
   delete obj.name;
   for (let item in obj) {
-    let dataset = {label: item, data: [obj.item]};
+    let dataset = {label: item, data: [obj[item]]};
+    let color = new RandomColor().toRGBA();
+
+    dataset.borderColor = color.toCSS();
+    color.value.a = 0.5;
+
+    dataset.borderWidth = 2;
+    dataset.backgroundColor = color.toCSS();
+
     formatedData.datasets.push(dataset);
     map[item] = dataset;
   }

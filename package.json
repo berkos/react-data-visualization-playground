@@ -26,9 +26,10 @@
     "chart.js": "^2.1.6"
   },
   "dependencies": {
+    "dsv-loader": "^1.1.0",
     "griddle-react": "^1.5.0",
+    "just.randomcolor": "^0.1.1",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "dsv-loader": "^1.1.0"
+    "react-dom": "^15.6.1"
   }
 }
